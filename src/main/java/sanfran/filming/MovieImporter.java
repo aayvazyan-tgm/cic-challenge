@@ -34,7 +34,7 @@ public class MovieImporter {
         try {
             List<MovieLocation> result = new LinkedList<>();
             Resource resource = new ClassPathResource("movieLocationData.json");
-            DocumentContext document = JsonPath.parse(resource.getFile());
+            DocumentContext document = JsonPath.parse(resource.getInputStream());
 
             JSONArray data = document.read("$.data");
             for (Object movieRaw : data) {
