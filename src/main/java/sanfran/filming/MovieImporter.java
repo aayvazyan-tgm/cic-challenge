@@ -3,6 +3,7 @@ package sanfran.filming;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
@@ -15,11 +16,13 @@ import java.util.List;
  * @version 22.03.2017
  */
 @Component
-public class MovieDatabase {
-    List<MovieLocation> movieLocations;
+public class MovieImporter {
+    private List<MovieLocation> movieLocations;
 
-    public MovieDatabase() {
-        this.movieLocations = fetchMovieLocations();
+    @Autowired
+    public MovieImporter(MovieRepository movieRepository) {
+        //Store all movies from the json file in the database
+        movieRepository.save(fetchMovieLocations());
     }
 
     /**

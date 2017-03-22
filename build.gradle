@@ -26,7 +26,9 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile('com.jayway.jsonpath:json-path')
+    compile group: 'com.h2database', name: 'h2', version: '1.4.194'
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

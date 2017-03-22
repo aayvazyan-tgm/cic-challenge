@@ -1,13 +1,26 @@
 package sanfran.filming;
 
+import javax.persistence.*;
+
 /**
  * @author Ari Ayvazyan
  * @version 22.03.2017
  */
+@Entity
+@Table(name = "movie")
 public class MovieLocation {
+    @Id
+    @GeneratedValue
+    private long id;
 
+    @Column
     private String title;
+
+    @Column
     private String locations;
+
+    public MovieLocation() {
+    }
 
     public MovieLocation(final String title, final String locations) {
         this.title = title;
