@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author AriAy
+ * @author Ari Ayvazyan
  * @version 22.03.2017
  */
 @Repository

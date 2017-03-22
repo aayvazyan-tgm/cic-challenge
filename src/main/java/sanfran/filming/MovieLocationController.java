@@ -3,9 +3,7 @@ package sanfran.filming;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Ari Ayvazyan
@@ -18,12 +16,17 @@ public class MovieLocationController {
     MovieRepository movieRepository;
 
     @RequestMapping("/getAll")
-    public List<MovieLocation> getAll(){
+    public List<MovieLocation> getAll() {
         return movieRepository.findAll();
     }
 
+    @RequestMapping("/addMovie")
+    public void addMovie(@RequestParam String title, @RequestParam String locations) {
+        movieRepository.save(new MovieLocation(title, locations));
+    }
+
     @RequestMapping("/getFiltered/{locations}")
-    public List<MovieLocation> getFiltered(@PathVariable String locations){
+    public List<MovieLocation> getFiltered(@PathVariable String locations) {
         return movieRepository.findBylocations(locations);
     }
 }
