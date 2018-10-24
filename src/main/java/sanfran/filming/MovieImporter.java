@@ -18,7 +18,6 @@ import java.util.List;
  */
 @Component
 public class MovieImporter {
-    private List<MovieLocation> movieLocations;
 
     @Autowired
     public MovieImporter(MovieRepository movieRepository) {
@@ -52,7 +51,4 @@ public class MovieImporter {
         return Collections.emptyList();
     }
 
-    public List<MovieLocation> getAllMovieLocations() {
-        return movieLocations;
-    }
 }
