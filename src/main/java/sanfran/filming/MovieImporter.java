@@ -22,7 +22,7 @@ public class MovieImporter {
     @Autowired
     public MovieImporter(MovieRepository movieRepository) {
         //Store all movies from the json file in the database
-        movieRepository.save(fetchMovieLocations());
+        movieRepository.saveAll(fetchMovieLocations());
     }
 
     /**
