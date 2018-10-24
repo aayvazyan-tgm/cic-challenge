@@ -25,8 +25,8 @@ public class MovieLocationControllerTests {
     @Autowired
     private MockMvc mockMvc;
 
-    private static String LOCATION = "MyTestLocation";
-    private static String TITLE = "myTestMovie";
+    private static final String LOCATION = "MyTestLocation";
+    private static final String TITLE = "myTestMovie";
 
     @Test
     public void testFilterAndAdd() throws Exception {

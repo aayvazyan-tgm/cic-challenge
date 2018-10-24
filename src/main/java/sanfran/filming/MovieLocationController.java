@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class MovieLocationController {
 
+    private final MovieRepository movieRepository;
+
     @Autowired
-    MovieRepository movieRepository;
+    public MovieLocationController(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
 
     /**
      *
